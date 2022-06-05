@@ -23,17 +23,20 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
             color: kPrimaryColor,
           ),
         ),
-        GestureDetector(
-          onTap: press,
-          child: Text(
-            login ?
-              'Cadastre-se!' :
-              'Entre nela!',
-            style: const TextStyle(
-              color: kPrimaryColor,
-              fontWeight: FontWeight.bold,
+        MouseRegion( 
+          cursor: SystemMouseCursors.click, 
+          child: GestureDetector( 
+            onTap: press,
+            child: Text(
+              login ?
+                'Cadastre-se!' :
+                'Entre nela!',
+              style: const TextStyle(
+                color: kPrimaryColor,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
+          ), 
         ),
       ],
     );
