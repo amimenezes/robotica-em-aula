@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:robotica/Screens/FirstPage/first_page.dart';
 import 'package:robotica/Screens/Login/components/background.dart';
 import 'package:robotica/Screens/Login/components/rounded_input_field.dart';
 import 'package:robotica/Screens/Signup/signup_screen.dart';
@@ -21,24 +22,33 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(
+              height: size.height * .10,
+            ),
             const Text(
-              "LOGIN",
+              'ROBÓTICA EDUCACIONAL',
               style: TextStyle(
-                fontWeight: FontWeight.bold
-              ),            
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
             SizedBox(
               height: size.height * .03,
             ),
-            Image.asset(
-              'imgs/robotic_class.jpg',
-              height: size.height *.35,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: SizedBox.fromSize(
+                child: Image.asset(
+                  'assets/imgs/robotic_class.jpg',
+                  height: size.height * 0.32,
+                ),
+              ),
             ),
             SizedBox(
-              height: size.height * .03,
+              height: size.height * .02,
             ),
             RoundedInputField(
-              hintText: 'Seu melhor e-mail',
+              hintText: 'Seu e-mail',
               onChanged: (value) {
               },
             ),
@@ -46,13 +56,25 @@ class Body extends StatelessWidget {
               onChanged: (
                 value
               ) {},
+              hintText: '',
+              
             ),
             RoundedButton(
-              text: 'LOGIN',
-              press: () {},
+              text: 'ENTRAR',
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context)
+                    {
+                      return const FirstPage();
+                    },
+                  ),
+                );
+              },
             ),
             SizedBox(
-              height: size.height * .03,
+              height: size.height * .02,
             ),
             AlreadyHaveAnAccountCheck(
               press: () {
@@ -65,6 +87,9 @@ class Body extends StatelessWidget {
                   ),
                 );
               },            
+            ),
+            SizedBox(
+              height: size.height * .02,
             ),
           ],
         ),

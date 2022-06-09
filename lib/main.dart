@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Login',
+      title: 'RC4 Login',
       theme: ThemeData(
-        primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: const Color.fromRGBO(255, 255, 255, 0)
+        primaryColor: kPrimaryLightColor,
+        //scaffoldBackgroundColor: const Color.fromRGBO(255, 255, 255, 0)
       ),
       home: const WelcomeScreen(),
     );

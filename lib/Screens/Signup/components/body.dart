@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:robotica/Screens/Login/components/rounded_input_field.dart';
 import 'package:robotica/Screens/Login/login_sreen.dart';
 import 'package:robotica/Screens/Signup/components/background.dart';
@@ -25,28 +24,49 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(
+              height: size.height * .10,
+            ),
             const Text(
               'CADASTRE-SE',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(
+              height: size.height * .04,
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: SizedBox.fromSize(
+                child: Image.asset(
+                  'assets/imgs/r4c_cadastro.png',
+                  height: size.height * .27,
+                ),
               ),
             ),
             SizedBox(
               height: size.height * .03,
             ),
-            SvgPicture.asset(
-              'icons/signup.svg',
-              height: size.height * .35,
-      
-            ),
-            SizedBox(
-              height: size.height * .03,
+            RoundedInputField(
+              hintText: 'Seu nome completo',
+              onChanged: (value) {},
             ),
             RoundedInputField(
-              hintText: 'Seu e-mail',
+              hintText: 'Seu melhor e-mail',
+              onChanged: (value) {},
+            ),
+            RoundedInputField(
+              hintText: 'Profissão',
               onChanged: (value) {},
             ),
             RoundedPasswordField(
+              hintText: 'Sua senha',
+              onChanged: (value) {},
+            ),
+            RoundedPasswordField(
+              hintText: 'Repita sua senha',
               onChanged: (value) {},
             ),
             RoundedButton(
@@ -73,15 +93,15 @@ class Body extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SocialIcon(
-                  iconSrc: 'icons/facebook.svg',
+                  iconSrc: 'assets/icons/facebook.svg',
                   press: () {},
                 ),
                 SocialIcon(
-                  iconSrc: 'icons/twitter.svg',
+                  iconSrc: 'assets/icons/twitter.svg',
                   press: () {},
                 ),
                 SocialIcon(
-                  iconSrc: 'icons/google-plus.svg',
+                  iconSrc: 'assets/icons/google-plus.svg',
                   press: () {},
                 ),
               ],

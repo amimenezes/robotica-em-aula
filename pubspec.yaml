@@ -76,6 +76,9 @@ flutter:
       - assets/icons/login.svg
       - assets/icons/signup.svg
       - assets/icons/twitter.svg
+      - assets/imgs/robotic_class_2.jpg
+      - assets/imgs/r4c_cadastro.png
+      - assets/imgs/father_and_son_making_robot.jpg
       
       
 

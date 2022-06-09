@@ -25,26 +25,33 @@ class Body extends StatelessWidget {
             SizedBox(
               height: size.height * 0.05,
             ),
-            Image.asset(
-              'imgs/robotic_woman.png',
-              height: size.height * 0.45,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                'assets/imgs/robotic_class_2.jpg',
+                height: size.height * 0.45,
+              ),
             ),
             SizedBox(
               height: size.height * 0.05,
             ),
-            RoundedButton(
-              text: 'LOGIN',
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context)
-                    {
-                      return const LoginScreen();
-                    },
-                  ),
-                );
-              },
+            ButtonTheme(
+              minWidth: 200.0,
+              height: 20,
+              child: RoundedButton(
+                text: 'ENTRAR',
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)
+                      {
+                        return const LoginScreen();
+                      },
+                    ),
+                  );
+                },
+              ),
             ),
             RoundedButton(
               text: 'CADASTRAR-SE',
