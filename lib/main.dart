@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:robotica/Screens/Welcome/welcome_screen.dart';
-import 'package:robotica/constants.dart';
+import 'package:robotica/home.dart';
+// ignore: import_of_legacy_library_into_null_safe
+//import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
-  runApp(const MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  // Inicia o Firebase
+  WidgetsFlutterBinding.ensureInitialized();
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+// Firestore.instance
+//   .collection("Usuarios")
+//   .document("Pontuação")
+//   .setData(
+//     {
+//       "Michele": "05",
+//       "Lady Gaga" : "10",
+//     }
+//   );
+
+  runApp(
+    const MaterialApp(
+      title: "Home",
+      home: Home(),
       debugShowCheckedModeBanner: false,
-      title: 'RC4 Login',
-      theme: ThemeData(
-        primaryColor: kPrimaryLightColor,
-        //scaffoldBackgroundColor: const Color.fromRGBO(255, 255, 255, 0)
-      ),
-      home: const WelcomeScreen(),
-    );
-  }
+    )    
+  );
 }

@@ -18,9 +18,12 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              "Robótica em Aula",
-              style: TextStyle(fontWeight: FontWeight.bold),
+            Text(
+              "Robo4Share".toUpperCase(),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
             ),
             SizedBox(
               height: size.height * 0.05,
@@ -28,7 +31,7 @@ class Body extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
-                'assets/imgs/robotic_class_2.jpg',
+                'assets/imgs/screen_welcome.png',
                 height: size.height * 0.45,
               ),
             ),

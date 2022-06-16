@@ -25,11 +25,11 @@ class Body extends StatelessWidget {
             SizedBox(
               height: size.height * .10,
             ),
-            const Text(
-              'ROBÓTICA EDUCACIONAL',
-              style: TextStyle(
+            Text(
+              'LOGIN'.toUpperCase(),
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             SizedBox(
@@ -39,7 +39,7 @@ class Body extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
               child: SizedBox.fromSize(
                 child: Image.asset(
-                  'assets/imgs/robotic_class.jpg',
+                  'assets/imgs/screen_login.png',
                   height: size.height * 0.32,
                 ),
               ),

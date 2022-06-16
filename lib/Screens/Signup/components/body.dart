@@ -27,11 +27,11 @@ class Body extends StatelessWidget {
             SizedBox(
               height: size.height * .10,
             ),
-            const Text(
-              'CADASTRE-SE',
-              style: TextStyle(
+            Text(
+              'Cadastre-se'.toUpperCase(),
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             SizedBox(
@@ -41,7 +41,7 @@ class Body extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
               child: SizedBox.fromSize(
                 child: Image.asset(
-                  'assets/imgs/r4c_cadastro.png',
+                  'assets/imgs/screen_registration.png',
                   height: size.height * .27,
                 ),
               ),
@@ -105,6 +105,9 @@ class Body extends StatelessWidget {
                   press: () {},
                 ),
               ],
+            ),
+            SizedBox(
+              height: size.height * .03,
             ),
           ],
         ),

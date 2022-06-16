@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:robotica/Screens/FirstPage/components/background.dart';
+import 'package:robotica/Screens/Projetos/projetos.dart';
 import 'package:robotica/components/button_funcionalidades.dart';
 
 class Body extends StatelessWidget {
@@ -20,11 +21,11 @@ class Body extends StatelessWidget {
             SizedBox(
               height: size.height * .10,
             ),
-            const Text(
-              'BEM-VIND@S',
-              style: TextStyle(
+            Text(
+              'Bem-vind@s'.toUpperCase(),
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             SizedBox(
@@ -33,7 +34,7 @@ class Body extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset(
-                'assets/imgs/father_and_son_making_robot.jpg',
+                'assets/imgs/screen_first_page.png',
                 height: size.height * 0.27,
               ),
             ),
@@ -55,7 +56,15 @@ class Body extends StatelessWidget {
                 RoundedButtonFuncionalidades(
                   text: 'Projetos'.toUpperCase(),
                   press: () {
-                    
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context)
+                        {
+                          return const Projetos();
+                        }
+                      ),
+                    );
                   },
                 ),
               ],
