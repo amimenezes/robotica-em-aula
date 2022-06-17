@@ -149,25 +149,25 @@ class _MyFormState extends State<MyForm> {
                     _formKey.currentState!.save();
                   }
                 },
-              child: 
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Icon(
-                    Icons.add,
-                    color: Colors.black54,
-                    size: 16,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      left: 10,
+                child: 
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const Icon(
+                      Icons.add,
+                      color: Colors.black54,
+                      size: 16,
                     ),
-                    child: const Text(
-                      'Adicionar',
-                    ),
-                  )
-                ],
+                    Container(
+                      margin: const EdgeInsets.only(
+                        left: 10,
+                      ),
+                      child: const Text(
+                        'Adicionar',
+                      ),
+                    )
+                  ],
               ),
             ),
           ],
