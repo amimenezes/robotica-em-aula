@@ -70,40 +70,112 @@ class _MyFormState extends State<MyForm> {
                 child: TextFormField(
                   controller: _nameController,
                   decoration: const InputDecoration(
-                    hintText: 'Insira o nome do componente'
+                    hintText: 'Insira o nome do Projeto'
                   ),
                   validator: (v){
                     if(v!.trim().isEmpty) return 'Por favor, insira algo.';
                     return null;
-                  },
+                  },                  
                 ),
+                
               ),
               const SizedBox(height: 20,),
+              
               const Text(
-                'Add Componente', style: TextStyle(
+                'Componentes do Projeto', style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 16
                 ),
               ),
               ..._getFriends(),
               const SizedBox(height: 40,),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Icon(
+                    Icons.circle_rounded,
+                    color: Colors.black54,
+                    size: 16,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      left: 10,
+                    ),
+                    child: const Text(
+                      'LED',
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      left: 10,
+                    ),
+                    child: const Text(
+                      '3',
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Icon(
+                    Icons.circle_rounded,
+                    color: Colors.black54,
+                    size: 16,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      left: 10,
+                    ),
+                    child: const Text(
+                      'Protoboard',
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      left: 10,
+                    ),
+                    child: const Text(
+                      '1',
+                    ),
+                  ),
+                ],
+              ),
               FlatButton(
                 onPressed: (){
                   if(_formKey.currentState!.validate()){
                     _formKey.currentState!.save();
                   }
                 },
-                child: const Text('Adicionar'),
-                color: Colors.green,
+              child: 
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Icon(
+                    Icons.add,
+                    color: Colors.black54,
+                    size: 16,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      left: 10,
+                    ),
+                    child: const Text(
+                      'Adicionar',
+                    ),
+                  )
+                ],
               ),
-
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-      
-    );
-  }
+    ),
+  );
+}
 
   /// get firends text-fields
   List<Widget> _getFriends(){
@@ -154,8 +226,7 @@ class _MyFormState extends State<MyForm> {
 
 class FriendTextFields extends StatefulWidget {
   final int index;
-  // ignore: use_key_in_widget_constructors
-  const FriendTextFields(this.index);
+  const FriendTextFields(this.index, {Key? key}) : super(key: key);
   @override
   _FriendTextFieldsState createState() => _FriendTextFieldsState();
 }

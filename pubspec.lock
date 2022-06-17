@@ -89,7 +89,7 @@ packages:
       name: flutter_rating_bar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.2.0+1"
+    version: "4.0.1"
   flutter_svg:
     dependency: "direct main"
     description:

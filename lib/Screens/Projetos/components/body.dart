@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:robotica/Screens/Projetos/components/body_projeto.dart';
 import 'package:robotica/Screens/Projetos/components/body_componentes.dart';
@@ -159,12 +160,39 @@ class _GroupListViewPageState extends State<BodyProjetos> {
                                     ),
                                   )
                                 ],
-
                               ),
                             ),
-                            
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                                top: 5),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  RatingBarIndicator(
+                                    direction: Axis.horizontal,
+                                    itemCount: 5,
+                                    itemSize: 25,
+                                    //rating: userRat,
+                                    itemBuilder: (context, index) => const Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                      left: 10,
+                                    ),
+                                    // child: Text(
+                                    //   '${item['rating']}',                                      
+                                    // ),
+                                  )
+                                ],
+                              ),
+                            ),
                           ],
-
                         ),
                       ),
                     ),
@@ -220,7 +248,7 @@ class _GroupListViewPageState extends State<BodyProjetos> {
         order: GroupedListOrder.ASC,
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0x8A000000),
+        backgroundColor: const Color.fromRGBO(0, 0, 0, 1),
         onPressed: () => {
           Navigator.push(
             context,
@@ -348,7 +376,8 @@ List _dadosListaProjetos = [
     'image' : 'assets/imgs/robo_drone.png',
     'author' : 'Luluzinha',
     'date' : '01/06/2022',
-    'group' : 'Drone'
+    'group' : 'Drone',
+    'rating' : '5',
   },
   {
     'id': 2,
@@ -356,7 +385,8 @@ List _dadosListaProjetos = [
     'image' : 'assets/imgs/robo_light_fixture.png',
     'author' : 'Joãozinho',
     'date' : '02/06/2022',
-    'group' : 'Luminaria'
+    'group' : 'Luminaria',
+    'rating' : '4',
   },
   {
     'id': 3,
@@ -364,7 +394,8 @@ List _dadosListaProjetos = [
     'image' : 'assets/imgs/robo_wheels.png',
     'author' : 'Marshmallow',
     'date' : '03/06/2022',
-    'group' : 'Robô'
+    'group' : 'Robô',
+    'rating' : '3',
   },
   {
     'id': 4,
@@ -372,7 +403,8 @@ List _dadosListaProjetos = [
     'image' : 'assets/imgs/robo_arm.png',
     'author' : 'Liza Simpson',
     'date' : '04/06/2022',
-    'group' : 'Braço'
+    'group' : 'Braço',
+    'rating' : '2',
   },
 {
     'id': 5,
@@ -380,7 +412,9 @@ List _dadosListaProjetos = [
     'image' : 'assets/imgs/robo_fan.png',
     'author' : 'Lady Gaga',
     'date' : '05/06/2022',
-    'group' : 'Hélice'
+    'group' : 'Hélice',
+    'rating' : '1',
+
   },
   {
     'id': 6,
@@ -388,6 +422,7 @@ List _dadosListaProjetos = [
     'image' : 'assets/imgs/robo_cultivador_de_plantas.png',
     'author' : 'Rosa Maria',
     'date' : '06/06/2022',
-    'group' : 'Planta'
+    'group' : 'Planta',
+    'rating' : '0'
   }
 ];
