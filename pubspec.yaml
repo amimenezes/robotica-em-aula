@@ -29,7 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  image_picker: ^0.8.5+3
+  image_picker: ^0.8.4+4
+  video_player: ^2.4.5
+  youtube_player_flutter: ^8.1.0
   
 
   # The following adds the Cupertino Icons font to your application.
@@ -38,6 +40,8 @@ dependencies:
   flutter_svg: ^0.22.0 # Recurso para SVG
   grouped_list: ^5.1.1 # Recurso para Listas
   flutter_rating_bar: ^4.0.1 # Recurso para Curtidas
+  quantity_input: ^1.0.2 # Recurso para Quantidades
+  
   
   #firebase_core: ^0.4.0+5 # Recursos Básicos do Firebase
   #cloud_firestore: ^0.12.5 # Banco de Dados do Firebase
