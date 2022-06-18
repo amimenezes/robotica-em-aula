@@ -131,7 +131,7 @@ class _MyFormState extends State<MyForm> {
                           getImageFromGallery();
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: const Color.fromARGB(255, 255, 234, 0),
+                          primary: const Color.fromARGB(255, 255, 193, 7),
                           shadowColor: Colors.transparent,
                           shape: const CircleBorder(),
                         ),
@@ -169,69 +169,67 @@ class _MyFormState extends State<MyForm> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16),
-                  child: Column(children: [
-                    Container(
-                        alignment: Alignment.center,
-                        width: double.infinity,
-                        height: 150,
-                        color: Colors.grey[300],
-                        child: imageURI != null
-                            ? Image.file(
-                                imageURI!,
-                                width: 200,
-                                height: 200,
-                                fit: BoxFit.cover,
-                              )
-                            : const Text('Selecione um vídeo.')),
-                    Align(
-                      alignment: Alignment.center,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          getImageFromGallery();
+                  child: Column(
+                    children: [
+                      Container(
+                          alignment: Alignment.center,
+                          width: double.infinity,
+                          height: 150,
+                          color: Colors.grey[300],
+                          child: imageURI != null
+                              ? Image.file(
+                                  imageURI!,
+                                  width: 200,
+                                  height: 200,
+                                  fit: BoxFit.cover,
+                                )
+                              : const Text('Selecione um vídeo.')),
+                      TextFormField(
+                        controller: _nameController,
+                        textAlign: TextAlign.center,
+                        decoration: const InputDecoration(
+                          hintText: 'Insira uma URL do vídeo',
+                          prefixIcon: Padding(
+                            padding: EdgeInsets.symmetric(),
+                            child: Icon(Icons.ondemand_video_rounded),
+                          ),
+                        ),
+                        validator: (v) {
+                          if (v!.trim().isEmpty) {
+                            return 'Por favor, insira uma URL.';
+                          }
+                          return null;
                         },
-                        style: ElevatedButton.styleFrom(
-                          primary: const Color.fromARGB(255, 255, 234, 0),
-                          shadowColor: Colors.transparent,
-                          shape: const CircleBorder(),
-                          //primary: Colors.transparent,
-                          //shadowColor: Colors.transparent.withOpacity(0.5),
-                          // shape: const CircleBorder(
-                          //   side: BorderSide(
-                          //     color: Colors.black,
-                          //   )
-                          // ),
-                          
-                        ),
-                        child: const Icon(
-                          Icons.ondemand_video,
-                          color: Color.fromARGB(255, 0, 0, 0),
-                        ),
                       ),
-                    )
-                  ]),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 32.0),
-                  child: TextFormField(
-                    controller: _nameController,
-                    textAlign: TextAlign.center,
-                    decoration: const InputDecoration(
-                      hintText: 'Insira uma URL do vídeo',
-                      prefixIcon: Padding(
-                        padding: EdgeInsets.symmetric(),
-                        child: Icon(Icons.ondemand_video_rounded),
-                      ),
-                    ),
-                    validator: (v) {
-                      if (v!.trim().isEmpty) {
-                        return 'Por favor, insira uma URL.';
-                      }
-                      return null;
-                    },
+                      Align(
+                        alignment: Alignment.center,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            getImageFromGallery();
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: const Color.fromARGB(255, 255, 193, 7),
+                            shadowColor: Colors.transparent,
+                            shape: const CircleBorder(),
+                            //primary: Colors.transparent,
+                            //shadowColor: Colors.transparent.withOpacity(0.5),
+                            // shape: const CircleBorder(
+                            //   side: BorderSide(
+                            //     color: Colors.black,
+                            //   )
+                            // ),
+                          ),
+                          child: const Icon(
+                            Icons.ondemand_video,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
                 const SizedBox(
-                  height: 40,
+                  height: 10,
                 ),
                 const Align(
                   alignment: Alignment.center,
@@ -245,7 +243,7 @@ class _MyFormState extends State<MyForm> {
                 ),
                 ..._getFriends(),
                 const SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
@@ -375,14 +373,55 @@ class _MyFormState extends State<MyForm> {
                   ],
                 ),
                 const SizedBox(
+                  height: 40,
+                ),
+                const Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Descrição',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const TextField(
+                  minLines: 1,
+                  maxLines: null,
+                  keyboardType: TextInputType.multiline,
+                  decoration: InputDecoration(
+                      labelText: 'Insira a Descrição',
+                      border: OutlineInputBorder(),
+                      hintText: 'Insira a Descrição...',
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderSide: BorderSide(
+                          width: 1,
+                          color: Color.fromARGB(255, 255, 193, 7),
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderSide: BorderSide(
+                          width: 1,
+                          color: Colors.redAccent,
+                        ),
+                      )),
+                ),
+                const SizedBox(
                   height: 20,
                 ),
-
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        primary: const Color.fromARGB(255, 255, 193, 7),
+                      ),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState!.save();

@@ -4,18 +4,16 @@ import 'package:robotica/Screens/Projetos/projetos.dart';
 import 'package:robotica/components/button_funcionalidades.dart';
 
 class Body extends StatelessWidget {
-  const Body(
-    {
-      Key? key,
-    }
-  ) : super(key: key);
+  const Body({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
       child: SingleChildScrollView(
-        child: Column(          
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SizedBox(
@@ -26,6 +24,7 @@ class Body extends StatelessWidget {
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
+                fontSize: 18,
               ),
             ),
             SizedBox(
@@ -48,9 +47,7 @@ class Body extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30),
                   child: RoundedButtonFuncionalidades(
                     text: 'Grupos'.toUpperCase(),
-                    press: () {
-
-                    },
+                    press: () {},
                   ),
                 ),
                 RoundedButtonFuncionalidades(
@@ -58,12 +55,9 @@ class Body extends StatelessWidget {
                   press: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context)
-                        {
-                          return const Projetos();
-                        }
-                      ),
+                      MaterialPageRoute(builder: (context) {
+                        return const Projetos();
+                      }),
                     );
                   },
                 ),

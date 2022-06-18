@@ -98,6 +98,9 @@ flutter:
       - assets/imgs/robo_wheels.png
       - assets/imgs/robot.png
       - assets/imgs/woman.png
+      - assets/imgs/heart.png
+      - assets/imgs/heart_border.png
+      - assets/imgs/heart_half.png
       
 
   # An image asset can refer to one or more resolution-specific "variants", see

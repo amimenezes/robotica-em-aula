@@ -4,9 +4,12 @@ import 'package:robotica/constants.dart';
 
 class RoundedPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
+  final String hintText;
+
   const RoundedPasswordField({
     Key? key,
-    required this.onChanged, required String hintText,
+    required this.onChanged,
+    required this.hintText,
   }) : super(key: key);
 
   @override
@@ -15,13 +18,13 @@ class RoundedPasswordField extends StatelessWidget {
       child: TextField(
         obscureText: true,
         onChanged: onChanged,
-        decoration: const InputDecoration(
-          hintText: 'Sua senha',
-          icon: Icon(
+        decoration: InputDecoration(
+          hintText: hintText,
+          icon: const Icon(
             Icons.lock,
             color: kPrimaryColor,
           ),
-          suffix: Icon(
+          suffix: const Icon(
             Icons.visibility,
             color: kPrimaryColor,
           ),

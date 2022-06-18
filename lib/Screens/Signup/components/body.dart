@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:robotica/Screens/Login/components/rounded_input_field.dart';
 import 'package:robotica/Screens/Login/login_sreen.dart';
 import 'package:robotica/Screens/Signup/components/background.dart';
 import 'package:robotica/Screens/Signup/components/or_divider.dart';
 import 'package:robotica/Screens/Signup/components/social_icon.dart';
 import 'package:robotica/components/already_have_an_account_acheck.dart';
 import 'package:robotica/components/rounded_button.dart';
+import 'package:robotica/components/rounded_input_field_email.dart';
+import 'package:robotica/components/rounded_input_field_name.dart';
+import 'package:robotica/components/rounded_input_field_ocupacao.dart';
 import 'package:robotica/components/rounded_password_field.dart';
+import 'package:robotica/components/rounded_password_repeat_field.dart';
 
 class Body extends StatelessWidget {
-
-  const Body (
-    {
-      Key? key,
-    }
-  ) : super(key: key);
+  const Body({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,29 +35,29 @@ class Body extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.height * .04,
+              height: size.height * .01,
             ),
             ClipRRect(
-              borderRadius: BorderRadius.circular(50),
+              //borderRadius: BorderRadius.circular(50),
               child: SizedBox.fromSize(
                 child: Image.asset(
                   'assets/imgs/screen_registration.png',
-                  height: size.height * .27,
+                  height: size.height * .20,
                 ),
               ),
             ),
             SizedBox(
-              height: size.height * .03,
+              height: size.height * .01,
             ),
-            RoundedInputField(
+            RoundedInputFieldName(
               hintText: 'Seu nome completo',
               onChanged: (value) {},
             ),
-            RoundedInputField(
+            RoundedInputFieldEmail(
               hintText: 'Seu melhor e-mail',
               onChanged: (value) {},
             ),
-            RoundedInputField(
+            RoundedInputFieldOcupacao(
               hintText: 'Ocupação',
               onChanged: (value) {},
             ),
@@ -65,7 +65,7 @@ class Body extends StatelessWidget {
               hintText: 'Sua senha',
               onChanged: (value) {},
             ),
-            RoundedPasswordField(
+            RoundedPasswordRepeatField(
               hintText: 'Repita sua senha',
               onChanged: (value) {},
             ),
@@ -74,18 +74,16 @@ class Body extends StatelessWidget {
               press: () {},
             ),
             SizedBox(
-              height: size.height * .03,
+              height: size.height * .01,
             ),
             AlreadyHaveAnAccountCheck(
               login: false,
               press: () {
-                Navigator.push(
-                  context, MaterialPageRoute(
-                    builder: (context) {
-                      return const LoginScreen();
-                    },
-                  )
-                );
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return const LoginScreen();
+                  },
+                ));
               },
             ),
             const OrDivider(),
