@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:robotica/constants.dart';
-import 'Screens/Welcome/welcome_screen.dart';
+import 'screens/Welcome/welcome_screen.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);

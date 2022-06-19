@@ -4,7 +4,6 @@ import 'package:robotica/home.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
-
   // Inicia o Firebase
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -18,11 +17,9 @@ void main() {
 //     }
 //   );
 
-  runApp(
-    const MaterialApp(
-      title: "Home",
-      home: Home(),
-      debugShowCheckedModeBanner: false,
-    )    
-  );
+  runApp(const MaterialApp(
+    title: "Home",
+    home: Home(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
