@@ -26,10 +26,10 @@ class MyForm extends StatefulWidget {
   const MyForm({Key? key}) : super(key: key);
 
   @override
-  _MyFormState createState() => _MyFormState();
+  MyFormState createState() => MyFormState();
 }
 
-class _MyFormState extends State<MyForm> {
+class MyFormState extends State<MyForm> {
   final _formKey = GlobalKey<FormState>();
   late TextEditingController _nameController;
   static List<String> friendsList = [];
@@ -502,10 +502,10 @@ class FriendTextFields extends StatefulWidget {
   final int index;
   const FriendTextFields(this.index, {Key? key}) : super(key: key);
   @override
-  _FriendTextFieldsState createState() => _FriendTextFieldsState();
+  FriendTextFieldsState createState() => FriendTextFieldsState();
 }
 
-class _FriendTextFieldsState extends State<FriendTextFields> {
+class FriendTextFieldsState extends State<FriendTextFields> {
   late TextEditingController _nameController;
 
   @override
@@ -523,12 +523,12 @@ class _FriendTextFieldsState extends State<FriendTextFields> {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _nameController.text = _MyFormState.friendsList[widget.index];
+      _nameController.text = MyFormState.friendsList[widget.index];
     });
 
     return TextFormField(
       controller: _nameController,
-      onChanged: (v) => _MyFormState.friendsList[widget.index] = v,
+      onChanged: (v) => MyFormState.friendsList[widget.index] = v,
       decoration: const InputDecoration(hintText: 'Enter your friend\'s name'),
       validator: (v) {
         if (v!.trim().isEmpty) return 'Please enter something';

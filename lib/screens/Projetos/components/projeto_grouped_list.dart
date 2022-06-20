@@ -12,10 +12,10 @@ import 'package:robotica/screens/Projetos/components/projeto_cadastrar.dart';
 class BodyProjetosGroupedList extends StatefulWidget {
   const BodyProjetosGroupedList({Key? key}) : super(key: key);
   @override
-  _GroupListViewPageState createState() => _GroupListViewPageState();
+  GroupListViewPageState createState() => GroupListViewPageState();
 }
 
-class _GroupListViewPageState extends State<BodyProjetosGroupedList> {
+class GroupListViewPageState extends State<BodyProjetosGroupedList> {
   // List<ProjetoModel> pesquisarProjetos = [];
   // String query = '';
   // @override
@@ -149,13 +149,13 @@ class _GroupListViewPageState extends State<BodyProjetosGroupedList> {
                               children: [
                                 Expanded(
                                   child: ClipRRect(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(5)),
                                     child: Image.asset(
                                       //pesquisarProjetos[item].image,
                                       '${item['image']}',
                                       fit: BoxFit.cover,
                                     ),
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5)),
                                   ),
                                 ),
                                 Expanded(

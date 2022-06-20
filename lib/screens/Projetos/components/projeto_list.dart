@@ -11,10 +11,10 @@ class BodyProjetosList extends StatefulWidget {
   const BodyProjetosList({Key? key}) : super(key: key);
 
   @override
-  _ListViewPageState createState() => _ListViewPageState();
+  ListViewPageState createState() => ListViewPageState();
 }
 
-class _ListViewPageState extends State<BodyProjetosList> {
+class ListViewPageState extends State<BodyProjetosList> {
   List<ProjetoModel> pesquisarProjetos = [];
   String query = '';
   @override
@@ -114,13 +114,13 @@ class _ListViewPageState extends State<BodyProjetosList> {
                               children: [
                                 Expanded(
                                   child: ClipRRect(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(5)),
                                     child: Image.asset(
                                       pesquisarProjetos[item].image,
                                       //'${item['image']}',
                                       fit: BoxFit.cover,
                                     ),
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5)),
                                   ),
                                 ),
                                 Expanded(

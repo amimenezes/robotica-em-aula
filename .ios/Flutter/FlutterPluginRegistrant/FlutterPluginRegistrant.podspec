@@ -19,6 +19,10 @@ Depends on all your plugins, and provides a function to register them.
   s.static_framework    = true
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   s.dependency 'Flutter'
+  s.dependency 'cloud_firestore'
+  s.dependency 'firebase_auth'
+  s.dependency 'firebase_core'
+  s.dependency 'firebase_storage'
   s.dependency 'flutter_inappwebview'
   s.dependency 'image_picker_ios'
   s.dependency 'video_player_avfoundation'

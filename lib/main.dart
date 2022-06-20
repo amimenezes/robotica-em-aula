@@ -1,21 +1,20 @@
+//import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:robotica/home.dart';
-// ignore: import_of_legacy_library_into_null_safe
-//import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() {
+void main() async {
   // Inicia o Firebase
-  WidgetsFlutterBinding.ensureInitialized();
-
-// Firestore.instance
-//   .collection("Usuarios")
-//   .document("Pontuação")
-//   .setData(
-//     {
-//       "Michele": "05",
-//       "Lady Gaga" : "10",
-//     }
-//   );
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();  
+  // FirebaseFirestore.instance
+  //   .collection('Usuarios')
+  //   .doc('001')
+  //   .set(
+  //     {
+  //       'nome': 'Michele',
+  //     }
+  //   );
 
   runApp(const MaterialApp(
     title: "Home",

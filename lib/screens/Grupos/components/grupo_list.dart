@@ -9,10 +9,10 @@ class BodyGruposList extends StatefulWidget {
   const BodyGruposList({Key? key}) : super(key: key);
 
   @override
-  _ListViewPageState createState() => _ListViewPageState();
+  ListViewPageState createState() => ListViewPageState();
 }
 
-class _ListViewPageState extends State<BodyGruposList> {
+class ListViewPageState extends State<BodyGruposList> {
   List<GrupoModel> pesquisarGrupos = [];
   String query = '';
   @override
@@ -112,13 +112,13 @@ class _ListViewPageState extends State<BodyGruposList> {
                               children: [
                                 Expanded(
                                   child: ClipRRect(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(5)),
                                     child: Image.asset(
                                       pesquisarGrupos[item].image,
                                       //'${item['image']}',
                                       fit: BoxFit.cover,
                                     ),
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5)),
                                   ),
                                 ),
                                 Expanded(

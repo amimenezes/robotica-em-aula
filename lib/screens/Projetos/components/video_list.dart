@@ -6,10 +6,10 @@ class VideoList extends StatefulWidget {
   const VideoList({Key? key}) : super(key: key);
 
   @override
-  _VideoListState createState() => _VideoListState();
+  VideoListState createState() => VideoListState();
 }
 
-class _VideoListState extends State<VideoList> {
+class VideoListState extends State<VideoList> {
   final List<YoutubePlayerController> _controllers = [
     'gQDByCdjUXw',
     'iLnmTe5Q2Qw',
